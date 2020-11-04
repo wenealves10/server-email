@@ -39,7 +39,7 @@ app.post('/email',(req, res) =>{
         from: configs.user,
         to: emailTo,
         subject:'Sua Pergunta foi respondida!!',
-        text:`Acesse o site para ver a <a href="${configs.host}/pergunta/${emailID}">RESPOSTA!</a>`
+        html:`Acesse o site para ver a <a href="http://${configs.host}/pergunta/${emailID}">RESPOSTA!</a>`
     }).then(info =>{
         res.status(200)
         res.json({
