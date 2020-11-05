@@ -2,6 +2,7 @@ require('dotenv/config')
 const express = require('express')
 const app = express()
 const bodyParser = require('body-parser')
+const cors = require('cors')
 const nodemailer = require('nodemailer')
 
 const configs = {
@@ -15,8 +16,13 @@ const configs = {
     host: process.env.HOST_NAME
 }
 
+
 app.use(bodyParser.urlencoded({extended: false}))
 app.use(bodyParser.json())
+app.use(cors({
+    origin: 'https://www.agenciawebtech.com.br',
+    optionsSuccessStatus: 200
+}))
 
 app.post('/email',(req, res) =>{
 
