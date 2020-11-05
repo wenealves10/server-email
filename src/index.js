@@ -7,7 +7,7 @@ const nodemailer = require('nodemailer')
 
 const configs = {
     port: [
-        process.env.PORT_SERVER || 3000,
+        process.env.PORT || 3000,
         process.env.PORT_MAIL
     ],
     user: process.env.USER,
