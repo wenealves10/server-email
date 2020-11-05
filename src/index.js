@@ -24,6 +24,10 @@ app.use(cors({
     optionsSuccessStatus: 200
 }))
 
+app.get('/',(req, res) =>{
+    res.send('Funcionando com o cors')
+})
+
 app.post('/email',(req, res) =>{
 
     let emailTo = req.body.email
