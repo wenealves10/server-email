@@ -19,10 +19,10 @@ const configs = {
 
 app.use(bodyParser.urlencoded({extended: false}))
 app.use(bodyParser.json())
-app.use(cors({
-    origin: 'https://www.agenciawebtech.com.br',
-    optionsSuccessStatus: 200
-}))
+// app.use(cors({
+//     origin: 'https://www.agenciawebtech.com.br',
+//     optionsSuccessStatus: 200
+// }))
 
 app.get('/',(req, res) =>{
     res.send('Funcionando com o cors')
