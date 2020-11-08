@@ -7,7 +7,7 @@ const nodemailer = require('nodemailer')
 
 const configs = {
     port: [
-        process.env.PORT || 3001,
+        process.env.PORT || 3000,
         process.env.PORT_MAIL
     ],
     user: process.env.USER,
@@ -19,11 +19,11 @@ const configs = {
 
 app.use(bodyParser.urlencoded({extended: false}))
 app.use(bodyParser.json())
-app.use(cors())
-// app.use(cors({
-//     origin: 'https://agenciawebtech.com.br',
-//     optionsSuccessStatus: 200
-// }))
+
+app.use(cors({
+    origin: configs.host,
+    optionsSuccessStatus: 200
+}))
 
 app.get('/',(req, res) =>{
     res.send('Funcionando com o cors')
