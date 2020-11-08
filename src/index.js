@@ -37,12 +37,9 @@ app.post('/email',(req, res) =>{
     const transport = nodemailer.createTransport({
         host:configs.localhost,
         port:configs.port[1],
-        secure:false,
+        secure:true,
         auth:{user: configs.user
             ,pass: configs.password
-        },
-        tls:{
-            rejectUnauthorized:true
         }
     })
 
